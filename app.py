@@ -540,9 +540,9 @@ def home_section():
     <div class="highlight" style="height: 100%;">
         <p>Beyond data and algorithms, here are a few things that make me, me!</p>
         <ul style="list-style-type: disc; margin-left: 20px;">
-            <li>I'm an avid reader of science fiction and fantasy, always looking for the next great story.</li>
+            <li>I'm an avid reader of sportsperson biographies, always looking for the next great story.</li>
             <li>In my free time, I enjoy hiking and exploring new trails, connecting with nature.</li>
-            <li>I'm a keen chess player, always up for a challenging game.</li>
+            <li>I'm a keen cricket player, always up for a challenging game.</li>
             <li>I love experimenting with new recipes in the kitchen, especially fusion cuisine.</li>
         </ul>
     </div>
