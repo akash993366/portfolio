@@ -159,6 +159,7 @@ def local_css():
             flex-direction: column;
             align-items: center;
             text-align: center;
+            justify-content: center;
             background-color: #F3F4F6;
             border-radius: 8px;
             padding: 1.5rem;
@@ -176,16 +177,18 @@ def local_css():
             font-size: 2rem;
             color: #4338ca;
             margin-bottom: 1rem;
+            justify-content: center;
         }
         
         .contact-info h3 {
-            margin: 0 0 0.5rem;
             color: #111827;
+            justify-content: center;
         }
         
         .contact-info a {
             color: #4338ca;
             word-break: break-word;
+            justify-content: center;
         }
         
         /* Contact Form */
@@ -267,7 +270,10 @@ def local_css():
             display: flex;
             gap: 1rem;
         }
-        
+        h1 span.emoji {
+            color: unset !important;
+        }
+
         .social-icons a {
             color: #4B5563;
             font-size: 1.25rem;
@@ -298,13 +304,6 @@ def local_css():
                 align-items: center;
                 justify-content: center;
                 text-align: center;
-            }
-
-            .banner-profile-img-container {
-                margin-right: 0;
-                margin-bottom: 15px;
-                width: 120px;
-                height: 120px;
             }
 
             .clickable-title-container-btn h1 {
@@ -377,22 +376,6 @@ def local_css():
             text-decoration: none;
             color: inherit;
         }
-
-        /* Profile Image Container styling for banner */
-        .banner-profile-img-container {
-            padding: 5px; /* Smaller padding for banner */
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4338ca 0%, #1E3A8A 100%);
-            width: 100px; /* Fixed size for banner image/icon */
-            height: 100px; /* Fixed size for banner image/icon */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Smaller shadow */
-            flex-shrink: 0; /* Prevent image from shrinking */
-            /* New properties for centering icon if no image */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden; /* Ensure content stays within bounds */
-        }
         
         .banner-profile-img-container {
             padding: 5px;
@@ -408,11 +391,18 @@ def local_css():
             overflow: hidden;
         }
 
+        .banner-profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
 
         .banner-profile-img-container .fas.fa-user {
-            font-size: 50px; /* Smaller icon size */
-            color: #EEF2FF; /* Change color to contrast with gradient background */
+            font-size: 50px;
+            color: #EEF2FF;
         }
+
 
     </style>
     
@@ -480,14 +470,29 @@ def akash_gupta_banner():
                 {img_html}
             </div>
             <div>
-                <h1 class="slide-in-left">👋 I'm Akash</h1>
+                <div class="slide-in-left" style="display: flex; align-items: center; gap: 8px;">
+                    <span style="font-size: 2rem;">👋</span>
+                    <h1 style="margin: 0;">I'm Akash</h1>
+                </div>
                 <div class="slide-in-left">
-                    <h3>Data Scientist | AI/ML Solutions Architect</h3>
+                    <h3>AI/ML & GenAI Practitioner</h3>
                 </div>
             </div>
         </div>
     </a>
     """, unsafe_allow_html=True)
+    col_contact, col_projects, col_resume = st.columns(3)
+    with col_contact:
+        if st.button("✉️ Contact Me", key="home_contact_btn", on_click=navigate_to, args=("Contact",), use_container_width=True):
+            pass
+    with col_projects:
+        if st.button("🧑🏻‍💻 View Projects", key="home_projects_btn", on_click=navigate_to, args=("Projects",), use_container_width=True):
+            pass
+    with col_resume:
+        if st.button("📄 View Resume", key="home_resume_btn", on_click=navigate_to, args=("Resume",), use_container_width=True):
+            pass
+            
+    st.markdown('<div class="fade-in">', unsafe_allow_html=True)
 
 def main():
     local_css()
@@ -509,19 +514,6 @@ def main():
 def home_section():
     akash_gupta_banner() # Use the reusable banner
 
-    col_contact, col_projects, col_resume = st.columns(3)
-    with col_contact:
-        if st.button("✉️ Contact Me", key="home_contact_btn", on_click=navigate_to, args=("Contact",), use_container_width=True):
-            pass
-    with col_projects:
-        if st.button("📊 View Projects", key="home_projects_btn", on_click=navigate_to, args=("Projects",), use_container_width=True):
-            pass
-    with col_resume:
-        if st.button("📄 View Resume", key="home_resume_btn", on_click=navigate_to, args=("Resume",), use_container_width=True):
-            pass
-            
-    st.markdown('<div class="fade-in">', unsafe_allow_html=True)
-
     st.markdown('''
     <div class="highlight" style="
         margin-bottom: 20px;
@@ -529,22 +521,27 @@ def home_section():
         padding-left: 1.5rem;
     ">
         <p style="font-size: 1.1rem; line-height: 1.6;">
-            Experienced Data Science leader with <strong>9+ years</strong> of expertise delivering scalable AI/ML solutions for global banking and insurance clients. Passionate about building impactful GenAI, NLP, and ML systems that improve decision-making, efficiency, and business outcomes.
+            I’m a tech enthusiast and Data Science consultant with 9+ years of helping global banks and insurers turn AI and ML into real-world results. I love building practical GenAI, NLP, and machine learning solutions that boost decisions, efficiency, and business outcomes.
         </p>
     </div>
     ''', unsafe_allow_html=True)
 
     st.markdown('<h3 style="color: #4338ca; display: flex; align-items: center; gap: 10px; margin-top: 2rem;"><i class="fas fa-laugh-beam" style="color: #4338ca;"></i> Fun Facts About Me</h3>', unsafe_allow_html=True)
-    
     st.markdown('''
-    <div class="highlight" style="height: 100%;">
-        <p>Beyond data and algorithms, here are a few things that make me, me!</p>
-        <ul style="list-style-type: disc; margin-left: 20px;">
-            <li>I'm an avid reader of sportsperson biographies, always looking for the next great story.</li>
-            <li>In my free time, I enjoy hiking and exploring new trails, connecting with nature.</li>
-            <li>I'm a keen cricket player, always up for a challenging game.</li>
-            <li>I love experimenting with new recipes in the kitchen, especially fusion cuisine.</li>
-        </ul>
+        <div class="highlight" style="
+            margin-bottom: 20px;
+            border-left: 4px solid #4338ca;
+            padding-left: 1.5rem;
+        ">
+        <p style="font-size: 1.1rem; line-height: 1.6;">
+            Beyond data and algorithms, here’s a little more about what makes me, well… me:
+            <ul style="list-style-type: disc; margin-left: 20px;">
+                <li style="font-size: 1.1rem;">I love diving into sportsperson biographies, always chasing the next inspiring story.</li>
+                <li style="font-size: 1.1rem;">I religiously follow cricket, player stats, match numbers, trivia; it's basically my second language.</li>
+                <li style="font-size: 1.1rem;">Experimenting with new recipes is my kind of fun, especially when it involves fusion food.</li>
+                <li style="font-size: 1.1rem;">Also, I’m on a mission to try every good filter coffee out there; recommendations welcome!</li>
+            </ul>
+        </p>
     </div>
     ''', unsafe_allow_html=True)
 
@@ -971,11 +968,11 @@ def contact_section():
     st.markdown('<div class="footer fade-in">', unsafe_allow_html=True)
     st.markdown('''
     <div class="footer-content">
-        <p>© 2023 Akash Gupta. All rights reserved.</p>
+        <p>© 2025 Akash Gupta. All rights reserved.</p>
         <div class="social-icons">
-            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/akash993366" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/akash-gupta-399277143/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://x.com/_akashgupta_" target="_blank"><i class="fab fa-twitter"></i></a>
         </div>
     </div>
     ''', unsafe_allow_html=True)
