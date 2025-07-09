@@ -566,7 +566,7 @@ def resume_section():
         st.markdown('<div class="slide-in-left">', unsafe_allow_html=True)
         st.markdown('<div class="timeline">', unsafe_allow_html=True)
 
-        # EXL Experience
+        # EXL Service
         st.markdown('''
         <div class="timeline-item">
             <div class="timeline-date">2021 - Present</div>
@@ -574,21 +574,25 @@ def resume_section():
                 <h3>Lead Data Scientist</h3>
                 <h4>EXL Service | Gurgaon, India</h4>
                 <ul class="timeline-list">
-                    <li>Led the development of explainable AI models for unstructured data, enhancing model interpretability and business trust by 25%.</li>
-                    <li>Designed and implemented a scalable MLOps pipeline on Azure, automating model deployment and monitoring for 30+ models.</li>
-                    <li>Mentored a team of 5 junior data scientists, fostering skill development in advanced analytics and machine learning.</li>
+                    <li>Built scalable <strong>ML/GenAI pipelines</strong> and led a 10-member team to deliver solutions across underwriting, claims, and audit operations.</li>
+                    <li>Developed <strong>semantic search engine</strong> using Transformers (BERT, all-mpnet) + Q&A chains → <em>reduced claims retrieval time by 70%</em>.</li>
+                    <li>Engineered <strong>Text2SQL LLM app</strong> for non-technical users to query databases → <em>reduced dev dependency by 60%</em>.</li>
+                    <li>Created <strong>Enterprise Text Flag Library</strong> using LLMs (Gemini, SetFit) to extract structured insights from claim notes → <em>90% reduction in false positives/negatives</em>.</li>
+                    <li>Designed <strong>premium forecasting tool</strong> using GLMs → <em>$12M+ annual increase in recovered premiums</em>.</li>
                 </ul>
                 <div class="timeline-tags">
-                    <span class="skill-tag">Explainable AI</span>
-                    <span class="skill-tag">MLOps</span>
-                    <span class="skill-tag">Azure</span>
+                    <span class="skill-tag">GenAI</span>
+                    <span class="skill-tag">BERT</span>
+                    <span class="skill-tag">LLM</span>
+                    <span class="skill-tag">ML Pipelines</span>
+                    <span class="skill-tag">Vertex AI</span>
                     <span class="skill-tag">Leadership</span>
                 </div>
             </div>
         </div>
         ''', unsafe_allow_html=True)
 
-        # EY Experience
+        # EY
         st.markdown('''
         <div class="timeline-item">
             <div class="timeline-date">2019 - 2021</div>
@@ -596,19 +600,21 @@ def resume_section():
                 <h3>Data Scientist</h3>
                 <h4>EY | Gurgaon, India</h4>
                 <ul class="timeline-list">
-                    <li>Developed AI/ML forecasting tools and strategic portfolio optimization engines.</li>
-                    <li>Delivered advanced analytics for global M&A advisory and financial modeling.</li>
+                    <li>Delivered a dynamic <strong>portfolio optimization platform</strong> with simulation, KPI forecasting, and model selection engine.</li>
+                    <li>Led strategic analytics for Japanese M&A firm → <em>improved deal conversion by identifying key closure signals</em>.</li>
                 </ul>
                 <div class="timeline-tags">
                     <span class="skill-tag">Forecasting</span>
-                    <span class="skill-tag">Analytics</span>
-                    <span class="skill-tag">Financial Modeling</span>
+                    <span class="skill-tag">ML</span>
+                    <span class="skill-tag">M&A Analytics</span>
+                    <span class="skill-tag">XGBoost</span>
+                    <span class="skill-tag">Keras</span>
                 </div>
             </div>
         </div>
         ''', unsafe_allow_html=True)
 
-        # Accenture Experience
+        # Accenture
         st.markdown('''
         <div class="timeline-item">
             <div class="timeline-date">2015 - 2019</div>
@@ -616,17 +622,21 @@ def resume_section():
                 <h3>Senior Analyst</h3>
                 <h4>Accenture | Gurgaon, India</h4>
                 <ul class="timeline-list">
-                    <li>Automated ETL pipelines for U.S. banking clients using Python and IBM DataStage.</li>
-                    <li>Migrated fraud detection models from GLM to Random Forest, boosting recall by 8%.</li>
+                    <li>Built scalable <strong>ETL pipelines</strong> using Python, Alteryx, and IBM DataStage for U.S. banking clients → <em>25% improvement in SLA compliance</em>.</li>
+                    <li>Re-engineered <strong>fraud detection system</strong> using Random Forest with advanced features like device score, geo-deviation → <em>+7% recall uplift</em>.</li>
+                    <li>Led productionization with Airflow + monitoring via PSI/KS metrics for drift detection and fraud ops visibility.</li>
                 </ul>
                 <div class="timeline-tags">
                     <span class="skill-tag">ETL</span>
-                    <span class="skill-tag">Python</span>
                     <span class="skill-tag">Fraud Detection</span>
+                    <span class="skill-tag">Random Forest</span>
+                    <span class="skill-tag">DataStage</span>
+                    <span class="skill-tag">Airflow</span>
                 </div>
             </div>
         </div>
         ''', unsafe_allow_html=True)
+
         st.markdown('</div>', unsafe_allow_html=True)
         st.markdown('</div>', unsafe_allow_html=True)
 
@@ -655,42 +665,70 @@ def resume_section():
     # Skills Tab
     with tabs[2]:
         st.markdown('<div class="fade-in">', unsafe_allow_html=True)
-        # Create columns for different skill categories
         skill_col1, skill_col2 = st.columns(2)
 
+        card_style = 'min-height: 340px; height: 100%;'
+
         with skill_col1:
-            st.markdown('<h3><i class="fas fa-code" style="color: #4338ca;"></i> Technical</h3>', unsafe_allow_html=True)
-            st.markdown('''
-            <div class="highlight" style="height: 100%;">
+            st.markdown('<h3><i class="fas fa-brain" style="color: #4338ca;"></i> AI/ML & GenAI Ecosystem</h3>', unsafe_allow_html=True)
+            st.markdown(f'''
+            <div class="highlight" style="{card_style}">
                 <ul>
-                    <li>Python, SQL, R, Java</li>
-                    <li>TensorFlow, Keras, PyTorch, Scikit-learn</li>
-                    <li>Pandas, NumPy, Matplotlib, Seaborn</li>
-                    <li>Spark, Hadoop, Databricks</li>
-                    <li>Azure ML, AWS SageMaker, Google Cloud AI Platform</li>
-                    <li>MLflow, Docker, Kubernetes, Git</li>
-                    <li>Streamlit, Flask</li>
+                    <li><strong>Languages:</strong> Python, SQL</li>
+                    <li><strong>ML Algorithms:</strong> Linear/Logistic Regression, Decision Trees, Random Forest, SVM, KNN, Naive Bayes, PCA</li>
+                    <li><strong>Boosting:</strong> AdaBoost, Gradient Boosting, CatBoost</li>
+                    <li><strong>DL Frameworks:</strong> TensorFlow, PyTorch</li>
+                    <li><strong>Deep Learning:</strong> CNN, LSTM, RNN</li>
+                    <li><strong>GenAI & NLP:</strong> Transformers (BERT, GPT), LangChain, Prompt Engineering, RAGs, Text2SQL, Vector DBs, NER, TF-IDF, Regex, Dependency Parsing</li>
+                    <li><strong>LLM Techniques:</strong> Fine-tuning, LoRA, Quantization</li>
                 </ul>
             </div>
             ''', unsafe_allow_html=True)
+
+            st.markdown('<div style="height: 30px;"></div>', unsafe_allow_html=True)
+            st.markdown('<h3><i class="fas fa-tools" style="color: #4338ca;"></i> MLOps & Engineering</h3>', unsafe_allow_html=True)
+            st.markdown(f'''
+            <div class="highlight" style="{card_style}">
+                <ul>
+                    <li><strong>Deployment:</strong> Docker, Vertex AI, Kubeflow, Concourse CI</li>
+                    <li><strong>CI/CD:</strong> GitHub Actions, Git</li>
+                    <li><strong>ETL & Pipelines:</strong> Airflow, Alteryx, IBM DataStage</li>
+                    <li><strong>Big Data:</strong> Spark, Hadoop, Databricks</li>
+                    <li><strong>Cloud Platforms:</strong> GCP, AWS SageMaker, Azure ML</li>
+                </ul>
+            </div>
+            ''', unsafe_allow_html=True)
+            #st.markdown('<div style="height: 30px;"></div>', unsafe_allow_html=True)
 
         with skill_col2:
-            st.markdown('<h3><i class="fas fa-cogs" style="color: #4338ca;"></i> Methodologies & Domains</h3>', unsafe_allow_html=True)
-            st.markdown('''
-            <div class="highlight" style="height: 100%;">
+            st.markdown('<h3><i class="fas fa-database" style="color: #4338ca;"></i> Data Science & Analytics</h3>', unsafe_allow_html=True)
+            st.markdown(f'''
+            <div class="highlight" style="{card_style}">
                 <ul>
-                    <li>Machine Learning (Supervised, Unsupervised, Reinforcement)</li>
-                    <li>Deep Learning, Generative AI, NLP, Computer Vision</li>
-                    <li>Statistical Modeling, Time Series Analysis</li>
-                    <li>Data Engineering, ETL, Data Warehousing</li>
-                    <li>A/B Testing, Experiment Design</li>
-                    <li>Financial Services, Insurance, Supply Chain</li>
-                    <li>Agile, Scrum</li>
+                    <li><strong>EDA & Stats:</strong> Pandas, NumPy, Scikit-learn, GLMs, GAMs, Statistical Modeling</li>
+                    <li><strong>Visualization:</strong> Matplotlib, Seaborn, Plotly</li>
+                    <li><strong>Specializations:</strong> Time Series Forecasting, A/B Testing, Experiment Design</li>
                 </ul>
             </div>
             ''', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
 
+            st.markdown('<div style="height: 30px;"></div>', unsafe_allow_html=True)
+            st.markdown('<h3><i class="fas fa-briefcase" style="color: #4338ca;"></i> Domain Expertise & Soft Skills</h3>', unsafe_allow_html=True)
+            st.markdown(f'''
+            <div class="highlight" style="{card_style}">
+                <ul>
+                    <li>Insurance, Banking, Financial Services</li>
+                    <li>Use Cases: Claims Triage, Premium Forecasting, Fraud Detection, M&A Analysis</li>
+                    <li>Project Leadership: Team management (10+ members), Product Ownership</li>
+                    <li>Agile & Scrum Methodologies</li>
+                    <li>Stakeholder Collaboration, Cross-functional Communication</li>
+                    <li>Mentorship, Knowledge Sharing</li>
+                </ul>
+            </div>
+            ''', unsafe_allow_html=True)
+
+        st.markdown('</div>', unsafe_allow_html=True)
+        #st.markdown('<div style="height: 30px;"></div>', unsafe_allow_html=True)
 
 
 def project_section():
@@ -705,186 +743,125 @@ def project_section():
     project_tabs = st.tabs(["Gen AI", "ML", "Analytics"])
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # All Projects Tab
     with project_tabs[0]:
-        # Project 1
         st.markdown('<div class="project-container fade-in">', unsafe_allow_html=True)
-        col1, col2 = st.columns([1, 2])
-        with col1:
-            # Fallback to a styled placeholder
-            st.markdown('''
-            <div class="project-image-placeholder" style="background-color: #EEF2FF; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px;">
-                <i class="fas fa-robot" style="font-size: 80px; color: #4338ca;"></i>
-                <p style="margin-top: 10px; color: #4338ca;">GenAI</p>
-            </div>
-            ''', unsafe_allow_html=True)
-        with col2:
-            st.markdown('<h3 style="color: #4338ca;">Generative AI Content Platform</h3>', unsafe_allow_html=True)
-            st.markdown('''
-            <div class="project-description">
-                <p>Developed a Generative AI platform using large language models (LLMs) to automate content creation for marketing and internal communications. Implemented RAG (Retrieval Augmented Generation) to ensure factual accuracy and reduced content generation time by 60%, significantly boosting productivity.</p>
-            </div>
-            ''', unsafe_allow_html=True)
-            # Separate markdown for project details (technologies)
-            st.markdown('''
-            <div class="project-details">
-                <div class="project-technologies">
-                    <h4><i class="fas fa-tools" style="color: #4338ca;"></i> Technologies</h4>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">LLMs (OpenAI, Hugging Face)</span>
-                        <span class="skill-tag">Streamlit</span>
-                        <span class="skill-tag">Vector Databases</span>
-                        <span class="skill-tag">Azure</span>
-                    </div>
+
+        projects = [
+            {
+                "title": "Enterprise Text Flag Factory (GenAI)",
+                "icon": "fas fa-tags",
+                "theme": "Text Flagging",
+                "description": "Built an enterprise-grade flagging system to identify domain-specific tags in property and casualty claim notes using LLMs. Used a combination of GPT, Gemini, and fine-tuned sentence transformers for multi-intent detection across 30+ business flags. Engineered prompt chains with LangChain and custom validation logic, hosted via Streamlit for user testing. Integrated GCP’s Artifact Registry, GitHub Actions, and MLflow for end-to-end CI/CD and traceability. Achieved 90%+ precision and recall in pilot, drastically reducing manual audit time and standardizing interpretation across adjusters. Solution supports versioned pipelines for continued learning with human-in-the-loop architecture.",
+                "technologies": ["Python", "LLMs", "LangChain", "Vertex AI", "MLflow", "Streamlit", "GitHub Actions"]
+            },
+            {
+                "title": "Semantic Search in Claims",
+                "icon": "fas fa-search",
+                "theme": "Search Engine",
+                "description": "Implemented a semantic search platform to allow adjusters to query claims with natural language across millions of historical notes. Replaced keyword logic with sentence-transformer embeddings (all-mpnet-base-v2) and created a vector DB on GCP using Faiss. Enabled retrieval augmented generation (RAG) with context injection via LangChain and integrated BERT-QA chains for summary answers. Delivered on Streamlit with GCP IAM-secured authentication. The solution reduced document lookup time by 70%, improved user satisfaction, and allowed claims handlers to investigate patterns across policy types and regions.",
+                "technologies": ["Python", "Transformers", "Faiss", "LangChain", "GCP", "Streamlit"]
+            },
+            {
+                "title": "Text2SQL GenAI App",
+                "icon": "fas fa-database",
+                "theme": "Natural Language SQL",
+                "description": "Created an internal LLM app that allows business users to query insurance tables using natural language. Used OpenAI GPT-4 with SQL schema understanding and prompt tuning to generate context-aware SQL queries across multiple databases. Built a backend wrapper with SQLite and PostgreSQL connectors and frontend with Streamlit. Added result summarization with LLM and alert triggers for thresholds. Cut down BI team dependency by 60% and accelerated ad hoc reporting cycles.",
+                "technologies": ["OpenAI GPT-4", "LangChain", "SQLAlchemy", "Streamlit", "PostgreSQL"]
+            }
+        ]
+
+        for proj in projects:
+            col1, col2 = st.columns([1, 2])
+            with col1:
+                st.markdown(f'''
+                <div class="project-image-placeholder" style="background-color: #EEF2FF; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px;">
+                    <i class="{proj['icon']}" style="font-size: 80px; color: #4338ca;"></i>
+                    <p style="margin-top: 10px; color: #4338ca; font-weight: 500;">{proj['theme']}</p>
                 </div>
-            </div>
-            ''', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
-        st.markdown('<div class="project-divider" style="border-top: 1px solid #e2e8f0; margin: 20px 0;"></div>', unsafe_allow_html=True)
+                ''', unsafe_allow_html=True)
+            with col2:
+                st.markdown(f'<h3 style="color: #4338ca; margin-bottom: 0.3rem;">{proj["title"]}</h3>', unsafe_allow_html=True)
+                st.markdown(f'''
+                <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1rem;">{proj["description"]}</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                ''' + "".join([f'<span class="skill-tag">{tech}</span>' for tech in proj['technologies']]) + '</div>', unsafe_allow_html=True)
 
-        # Project 3
-        st.markdown('<div class="project-container fade-in">', unsafe_allow_html=True)
-        col1, col2 = st.columns([1, 2])
-        with col1:
-            # Fallback to a styled placeholder
-            st.markdown('''
-            <div class="project-image-placeholder" style="background-color: #EEF2FF; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px;">
-                <i class="fas fa-search" style="font-size: 80px; color: #4338ca;"></i>
-                <p style="margin-top: 10px; color: #4338ca;">Search Engine</p>
-            </div>
-            ''', unsafe_allow_html=True)
-        with col2:
-            st.markdown('<h3 style="color: #4338ca;">Semantic Claims Search Engine</h3>', unsafe_allow_html=True)
-            st.markdown('''
-            <div class="project-description">
-                <p>Built a transformer-based vector search platform leveraging BERT and Q&A chains to enable context-aware retrieval of claims documents. Reduced search time by 70% for underwriters and claims analysts, enhanced productivity, and modernized document search by overcoming limitations of keyword-based search methods.</p>
-            </div>
-            ''', unsafe_allow_html=True)
-            # Separate markdown for project details (technologies)
-            st.markdown('''
-            <div class="project-details">
-                <div class="project-technologies">
-                    <h4><i class="fas fa-tools" style="color: #4338ca;"></i> Technologies</h4>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Transformers (BERT)</span>
-                        <span class="skill-tag">Vector Embeddings</span>
-                        <span class="skill-tag">NLP</span>
-                        <span class="skill-tag">Streamlit</span>
-                    </div>
+            st.markdown('<div class="project-divider" style="border-top: 1px solid #e2e8f0; margin: 20px 0;"></div>', unsafe_allow_html=True)
+
+    with project_tabs[1]:
+        projects = [
+            {
+                "title": "Premium Audit Forecast Tool",
+                "icon": "fas fa-chart-bar",
+                "theme": "Forecasting",
+                "description": "Developed a predictive tool for commercial insurance audit departments to estimate premium variances using historical payroll, classifications, and endorsements. Leveraged GLMs and ensemble tree models (XGBoost) to estimate high-risk segments. Built Streamlit dashboard with user filters for industry class, state, and time period. Added data drift monitoring via Vertex AI and experiment tracking using MLflow. Resulted in $12M/year improved audit selection and aligned actuarial forecasts with underwriting insight.",
+                "technologies": ["Python", "XGBoost", "GLM", "MLflow", "Vertex AI", "Streamlit"]
+            },
+            {
+                "title": "Suspense Premium Outlier (SPO) Model",
+                "icon": "fas fa-exclamation-triangle",
+                "theme": "Outlier Detection",
+                "description": "Created SPO model for large commercial insurer to detect misclassified or mismatched premium entries. Used unsupervised DBSCAN clustering with manual labels to identify outliers. Feature set included payment frequency, prior premium delta, classification codes. Integrated alerts via dashboard, sent auto emails to operations for mismatches. Model enabled early triage, leading to faster correction and reconciliation of ~$50M worth of premiums annually.",
+                "technologies": ["Python", "DBSCAN", "Streamlit", "SQL", "Feature Engineering"]
+            }
+        ]
+
+        for proj in projects:
+            col1, col2 = st.columns([1, 2])
+            with col1:
+                st.markdown(f'''
+                <div class="project-image-placeholder" style="background-color: #EEF2FF; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px;">
+                    <i class="{proj['icon']}" style="font-size: 80px; color: #4338ca;"></i>
+                    <p style="margin-top: 10px; color: #4338ca; font-weight: 500;">{proj['theme']}</p>
                 </div>
-            </div>
-            ''', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
-        st.markdown('<div class="project-divider" style="border-top: 1px solid #e2e8f0; margin: 20px 0;"></div>', unsafe_allow_html=True)
+                ''', unsafe_allow_html=True)
+            with col2:
+                st.markdown(f'<h3 style="color: #4338ca; margin-bottom: 0.3rem;">{proj["title"]}</h3>', unsafe_allow_html=True)
+                st.markdown(f'''
+                <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1rem;">{proj["description"]}</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                ''' + "".join([f'<span class="skill-tag">{tech}</span>' for tech in proj['technologies']]) + '</div>', unsafe_allow_html=True)
 
-    with project_tabs[1]:    # Project 2
-        st.markdown('<div class="project-container fade-in">', unsafe_allow_html=True)
-        col1, col2 = st.columns([1, 2])
-        with col1:
-            # Fallback to a styled placeholder
-            st.markdown('''
-            <div class="project-image-placeholder" style="background-color: #EEF2FF; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px;">
-                <i class="fas fa-chart-bar" style="font-size: 80px; color: #4338ca;"></i>
-                <p style="margin-top: 10px; color: #4338ca;">Forecasting</p>
-            </div>
-            ''', unsafe_allow_html=True)
-        with col2:
-            st.markdown('<h3 style="color: #4338ca;">Premium Audit Forecast Tool</h3>', unsafe_allow_html=True)
-            st.markdown('''
-            <div class="project-description">
-                <p>Designed and deployed a GLM-based simulator to predict audit premium outcomes and simulate the operational impact of audit selection. The tool enabled a data-driven approach to audit assignment, optimized resource utilization, and contributed to a $12M+ increase in premium recovery annually while reducing audit costs.</p>
-            </div>
-            ''', unsafe_allow_html=True)
-            # Separate markdown for project details (technologies)
-            st.markdown('''
-            <div class="project-details">
-                <div class="project-technologies">
-                    <h4><i class="fas fa-tools" style="color: #4338ca;"></i> Technologies</h4>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Streamlit</span>
-                        <span class="skill-tag">MLflow</span>
-                    </div>
+            st.markdown('<div class="project-divider" style="border-top: 1px solid #e2e8f0; margin: 20px 0;"></div>', unsafe_allow_html=True)
+
+    with project_tabs[2]:
+        projects = [
+            {
+                "title": "Fraud Detection Enhancement",
+                "icon": "fas fa-shield-alt",
+                "theme": "Fraud Detection",
+                "description": "Redesigned a legacy fraud detection model for a top U.S. banking client. Transitioned from GLM to Random Forest, adding engineered features like device velocity, user-behavioral patterns, and geolocation shifts. Addressed class imbalance via SMOTE and implemented probability thresholds to manage false positives. Created a monitoring dashboard for model drift (KS, PSI metrics) and retraining triggers. The new pipeline improved detection recall by 8%, reduced fraud leakage, and aligned with compliance guidelines for explainability.",
+                "technologies": ["Python", "Scikit-learn", "SQL", "SMOTE", "Random Forest"]
+            },
+            {
+                "title": "TRANBI M&A Analytics",
+                "icon": "fas fa-handshake",
+                "theme": "Deal Analytics",
+                "description": "Led analytics module for TRANBI, a Japan-based M&A platform. Built deal scoring and lead prioritization models using logistic regression and NLP-based profile match scoring between buyers and sellers. Created Power BI dashboards showing lead engagement, closure likelihood, and outreach effectiveness. Collaborated with Japanese PMs to localize content, manage iterations, and implement final solution. Resulted in improved match rates and deal conversion KPIs.",
+                "technologies": ["Python", "Logistic Regression", "NLP", "Power BI", "Japanese Localization"]
+            }
+        ]
+
+        for proj in projects:
+            col1, col2 = st.columns([1, 2])
+            with col1:
+                st.markdown(f'''
+                <div class="project-image-placeholder" style="background-color: #EEF2FF; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px;">
+                    <i class="{proj['icon']}" style="font-size: 80px; color: #4338ca;"></i>
+                    <p style="margin-top: 10px; color: #4338ca; font-weight: 500;">{proj['theme']}</p>
                 </div>
-            </div>
-            ''', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
-        st.markdown('<div class="project-divider" style="border-top: 1px solid #e2e8f0; margin: 20px 0;"></div>', unsafe_allow_html=True)
+                ''', unsafe_allow_html=True)
+            with col2:
+                st.markdown(f'<h3 style="color: #4338ca; margin-bottom: 0.3rem;">{proj["title"]}</h3>', unsafe_allow_html=True)
+                st.markdown(f'''
+                <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1rem;">{proj["description"]}</p>
+                <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                ''' + "".join([f'<span class="skill-tag">{tech}</span>' for tech in proj['technologies']]) + '</div>', unsafe_allow_html=True)
 
+            st.markdown('<div class="project-divider" style="border-top: 1px solid #e2e8f0; margin: 20px 0;"></div>', unsafe_allow_html=True)
 
-        # Project 4
-        st.markdown('<div class="project-container fade-in">', unsafe_allow_html=True)
-        col1, col2 = st.columns([1, 2])
-        with col1:
-            # Fallback to a styled placeholder
-            st.markdown('''
-            <div class="project-image-placeholder" style="background-color: #EEF2FF; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px;">
-                <i class="fas fa-chart-line" style="font-size: 80px; color: #4338ca;"></i>
-                <p style="margin-top: 10px; color: #4338ca;">Risk Modeling</p>
-            </div>
-            ''', unsafe_allow_html=True)
-        with col2:
-            st.markdown('<h3 style="color: #4338ca;">Risk Segmentation and Pricing Model</h3>', unsafe_allow_html=True)
-            st.markdown('''
-            <div class="project-description">
-                <p>Developed a comprehensive risk segmentation and pricing model for a large insurance client, leveraging advanced statistical techniques and machine learning. The model improved pricing accuracy by 15%, leading to optimized premium structures and reduced claims exposure while maintaining competitive rates.</p>
-            </div>
-            ''', unsafe_allow_html=True)
-            # Separate markdown for project details (technologies)
-            st.markdown('''
-            <div class="project-details">
-                <div class="project-technologies">
-                    <h4><i class="fas fa-tools" style="color: #4338ca;"></i> Technologies</h4>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span class="skill-tag">R</span>
-                        <span class="skill-tag">Statistical Modeling</span>
-                        <span class="skill-tag">Clustering</span>
-                        <span class="skill-tag">Tableau</span>
-                    </div>
-                </div>
-            </div>
-            ''', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
-        st.markdown('<div class="project-divider" style="border-top: 1px solid #e2e8f0; margin: 20px 0;"></div>', unsafe_allow_html=True)
-
-    with project_tabs[2]:    # Project 5
-        st.markdown('<div class="project-container fade-in">', unsafe_allow_html=True)
-        col1, col2 = st.columns([1, 2])
-        with col1:
-            # Fallback to a styled placeholder
-            st.markdown('''
-            <div class="project-image-placeholder" style="background-color: #EEF2FF; height: 200px; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 10px;">
-                <i class="fas fa-shield-alt" style="font-size: 80px; color: #4338ca;"></i>
-                <p style="margin-top: 10px; color: #4338ca;">Fraud Detection</p>
-            </div>
-            ''', unsafe_allow_html=True)
-        with col2:
-            st.markdown('<h3 style="color: #4338ca;">Fraud Detection Model Enhancement</h3>', unsafe_allow_html=True)
-            st.markdown('''
-            <div class="project-description">
-                <p>Enhanced fraud detection for a major U.S. banking client by migrating from a GLM-based legacy system to a Random Forest model. Introduced advanced feature engineering, velocity metrics, and risk scoring, resulting in 8% improvement in fraud recall and significantly boosting detection performance on highly imbalanced datasets.</p>
-            </div>
-            ''', unsafe_allow_html=True)
-            # Separate markdown for project details (technologies)
-            st.markdown('''
-            <div class="project-details">
-                <div class="project-technologies">
-                    <h4><i class="fas fa-tools" style="color: #4338ca;"></i> Technologies</h4>
-                    <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Feature Engineering</span>
-                    </div>
-                </div>
-            </div>
-            ''', unsafe_allow_html=True)
-        st.markdown('</div>', unsafe_allow_html=True)
-
+    
+    
 def contact_section():
     akash_gupta_banner()
     st.markdown('<div class="fade-in">', unsafe_allow_html=True)
